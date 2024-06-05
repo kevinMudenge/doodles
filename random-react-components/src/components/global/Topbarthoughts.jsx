@@ -1,18 +1,18 @@
 import {useContext, useState} from "react";
 import { Link as RouterLink } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
-import {Box, FormControl, IconButton, InputLabel, Typography, useTheme} from "@mui/material";
-import {Select, Tooltip, FormControlLabel, Chip} from "@mui/material";
+import {Box, IconButton, Typography, useTheme} from "@mui/material";
+import { Tooltip, FormControlLabel, Chip} from "@mui/material";
 import {Menu, Button, MenuItem} from "@mui/material";
 
 
 import GridViewOutlinedIcon from '@mui/icons-material/GridViewOutlined';
 import FeedOutlinedIcon from '@mui/icons-material/FeedOutlined';
-import HistoryToggleOffOutlinedIcon from '@mui/icons-material/HistoryToggleOffOutlined';
-import PolicyOutlinedIcon from '@mui/icons-material/PolicyOutlined';
+
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
-import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
+
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
@@ -21,16 +21,17 @@ import { styled } from '@mui/material/styles';
 import Switch from '@mui/material/Switch';
 
 import {ColorModeContext, tokens} from "../../theme";
-import Logo from '../../assets/logo.svg';
+
 
 
 
 const Topbar=() =>{
   const theme = useTheme();
   const colors= tokens(theme.palette.mode);
+
+  const location = useLocation();
   
   //for the iconbuttons functionality.
-  const [search, setSearch]= useState(false);//search functionality
 
   const colorMode = useContext(ColorModeContext);//dark and lightmode
 
@@ -38,11 +39,6 @@ const Topbar=() =>{
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
-  const selectItems = [
-    {label: 'Apply for a Leave', to: '/leaveapplication' },
-    {label: 'Read About Leaves', to: '/leavepolicy' },
-  ];
-    
   const handleClick = (event) => {
       setAnchorEl(event.currentTarget);
   };
@@ -51,11 +47,8 @@ const Topbar=() =>{
       setAnchorEl(null);
   };
 
-    const handleSearch = () => {
-      setSearch(! search);
-    };
 
-    const MaterialUISwitch = styled(Switch)(({ theme }) => ({
+  const MaterialUISwitch = styled(Switch)(({ theme }) => ({
       width: 62,
       height: 34,
       padding: 7,
@@ -105,99 +98,50 @@ const Topbar=() =>{
 
     return <Box display="flex" justifyContent="space-between" px={{sm:2, xs:0}} py={1}>
     <FormControlLabel
-        control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />}
-        label="MUI switch"
+        control={<MaterialUISwitch sx={{ m: 1 }} onClick={colorMode.toggleColorMode} checked={theme.palette.mode === 'dark'}/>}
+        label="IamkevinMudenge"
       />
       <Box display="flex" alignItems="center">
         
         <Box display="flex" maxheight="43px" gap={1} pl={{sm:7, xs:1}}>
           <Button
-            variant="contained"
-            color="error"
+            variant="text"
+            color={location.pathname === '/dashboard' ? 'primary' : 'info'}
             component={RouterLink}
             size="small"
             to="/dashboard"
             activeClassName="active-button"
-            sx={{ borderRadius: '32px', textTransform: 'revert' }}
+            sx={{ borderRadius: '7px', textTransform: 'revert' }}
           >
-            <GridViewOutlinedIcon />
-            <Typography ml={1}>Dashboard</Typography>
+            <GridViewOutlinedIcon color="info"/>
+            <Typography ml={1} color={location.pathname === '/dashboard' ? colors.blueAccent[400] : undefined}>Dashboard</Typography>
           </Button>
           <Button
             variant="text"
+            color={location.pathname === '/myoptions' ? 'info' : 'primary'}
             component={RouterLink}
-            to="/leaveapplication"
+            to="/myoptions"
             size="small"
             activeClassName="active-button"
-            sx={{ borderRadius: '32px', textTransform: 'revert' }}
+            sx={{ borderRadius: '7px', textTransform: 'revert' }}
           >
-            <FeedOutlinedIcon color="info"/>
-            <Typography ml={1} color={colors.blueAccent[400]}>Leave Application</Typography>
-          </Button>
-
-          <Box minWidth="48px" maxWidth="120px">
-          <img src={Logo} style={{height: "auto", width: "100%"}} alt="SasaPay|LMS" />
-        </Box>
-
-          <Button
-            variant="text"
-            component={RouterLink}
-            size="small"
-            to="/leavetracker"
-            activeClassName="active-button"
-            sx={{ borderRadius: '32px', textTransform: 'revert' }}
-          >
-            <HistoryToggleOffOutlinedIcon color="info"/>
-            <Typography ml={1} color={colors.blueAccent[400]}>Leave Tracker</Typography>
-          </Button>
-          <Button
-            variant="text"
-            component={RouterLink}
-            to="/leavepolicy"
-            size="small"
-            activeClassName="active-button"
-            sx={{ borderRadius: '32px', textTransform: 'revert' }}
-          >
-            <PolicyOutlinedIcon color="info"/>
-            <Typography ml={1} color={colors.blueAccent[400]}>Leave Policy</Typography>
+            <FeedOutlinedIcon />
+            <Typography ml={1} color={location.pathname === '/myoptions' ? colors.blueAccent[400] : undefined}>My Options</Typography>
           </Button>
         </Box>
     </Box>
 
     <Box display="flex" alignItems="center">
+      
       <Box display="flex" gap={1} mr={1} maxHeight="2.7em">
         <IconButton onClick={colorMode.toggleColorMode}>
           {theme.palette.mode === 'light' ? 
-          (<DarkModeOutlinedIcon color="primary"/>):(<LightModeOutlinedIcon />)}
+          (<DarkModeOutlinedIcon color="info"/>):(<LightModeOutlinedIcon />)}
         </IconButton>
-        
-        <Box display="flex" justifyContent="space-between">
-          {search && (
-          <FormControl size="small">
-            <InputLabel>I would like to:</InputLabel>
-            <Select
-            style={{minWidth: '140px'}}
-            label="I would like to:"
-            >
-              {selectItems.map((selectItem) => (
-              <MenuItem
-              key={selectItem.label}
-              component={RouterLink}
-              to={selectItem.to}
-              >
-              <Typography color={colors.blueAccent[400]}>{selectItem.label}</Typography>
-              </MenuItem>
-            ))}
-            </Select>
-          </FormControl>)}
 
-          <IconButton type="button" sx={{p: 1}} onClick={handleSearch}>
-            <SearchOutlinedIcon color={theme.palette.mode === 'light' ? "primary": undefined}/>
-          </IconButton>
-        </Box>
       </Box>
       
-      <Chip color="info" icon={<AccountCircleOutlinedIcon />} sx={{cursor: "default"}} label="ani ievn" variant="filled" onDelete={handleClick} deleteIcon={<Tooltip title="Open settings" arrow placement="bottom-end"><ArrowDropDownIcon/></Tooltip>}/>
+      <Chip color="info" icon={<AccountCircleOutlinedIcon />} sx={{cursor: "default"}} label="KevinMudenge" variant="outlined" onDelete={handleClick} deleteIcon={<Tooltip title="Open settings" arrow placement="bottom-end"><ArrowDropDownIcon/></Tooltip>}/>
 
     </Box>
 
@@ -211,9 +155,9 @@ const Topbar=() =>{
     >
       <MenuItem onClick={handleClose}>
         <IconButton>
-          <PersonOutlinedIcon color='info'/>
+          <PersonOutlinedIcon color='primary'/>
         </IconButton>
-        <Typography ml={1} color={colors.blueAccent[400]}>
+        <Typography ml={1}>
           Profile
         </Typography>
       </MenuItem>
@@ -221,7 +165,7 @@ const Topbar=() =>{
         <IconButton>
           <LogoutOutlinedIcon color='error'/>
         </IconButton>
-        <Typography ml={1} color={colors.redAccent[400]}>
+        <Typography ml={1}>
           Logout
         </Typography>
           

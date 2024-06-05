@@ -1,3 +1,9 @@
+import { useState } from "react"
+
+import Topbar from '../../components/global/Topbarthoughts';
+import Header from '../../components/global/Header';
+import Copyright from '../../components/global/Copyright';
+
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -9,10 +15,9 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import img from './no_data.png';
-import { useState } from "react"
-import Header from '../../components/Header';
 
-const Dashboard=() =>{
+
+const Kwest=() =>{
     //definitions and functionalities all follow the same order
     
     const[individual, setIndividual] = useState(true);//for radio button
@@ -44,15 +49,16 @@ const Dashboard=() =>{
         setCountry(event.target.value);
     };
 
-    return <Box m= {{xs: 0, sm: 20}}>
-        <Box display="flex" justifyContent="space-between" alignItems="center">
+    return <Box mx= {{xs: 3, sm: 10}} my= {{xs: 1, sm: 4}}>
+        <Box mb= {1}><Topbar /></Box>
+        <Box display="flex" justifyContent="space-between">
         <Header title="KWEST" subtitle="Have you screened yet!?"/>
         </Box>
-    <Box display="flex" flexDirection={{xs: "column", sm: "row"}} p={3}>
+    <Box display="flex" flexDirection={{xs: "column", sm: "row"}} px={1} py={2}>
         <Box width={{xs:"100%", sm: 'auto'}} 
-        p={2}
+        px={2} py={1}
         mb={{xs: 2, sm: 0}}>
-        <Box width="100%" mb={1}>
+        <Box width="100%" mb={3}>
             <Typography variant="h5" color="#212b36" sx={{fontFamily: "Open Sans", fontWeight: "700"}}>
                 Screening
             </Typography>
@@ -61,7 +67,7 @@ const Dashboard=() =>{
         <Box>
             <FormControl>
                 <FormLabel>
-                    <Typography variant="h5" color="#637381" sx={{fontFamily: "Open Sans", fontWeight: "400"}}>
+                    <Typography mb={1} variant="h5" color="#637381" sx={{fontFamily: "Open Sans", fontWeight: "400"}}>
                         Screening Option
                     </Typography>
                 </FormLabel>
@@ -80,7 +86,7 @@ const Dashboard=() =>{
         </Box>
 
         <FormLabel>
-            <Typography variant="h5" color="#637381" 
+            <Typography variant="h5" my={1} color="#637381" 
             sx={{fontFamily: "Open Sans", fontWeight: "400"}}>
                 Search By
             </Typography>
@@ -130,41 +136,12 @@ const Dashboard=() =>{
            </FormControl>
         )}
 
-<Box 
-        display="flex" 
-        justifyContent="space-between" 
-        backgroundColor={colors.primary[400]} borderRadius="3px"
-        >
-          {isChecked && (
-          <FormControl size="small" sx={{ borderColor: 'blue', borderWidth: 2 }}>
-            <InputLabel>I would like to:</InputLabel>
-            <Select
-            style={{minWidth: '160px'}}
-            label="I would like to:"
-            >
-              {selectItems.map((selectItem) => (
-              <MenuItem
-              key={selectItem.value}
-              value={selectItem.value}
-              component={RouterLink}
-              to={selectItem.to}
-              >
-              {selectItem.label}
-              </MenuItem>
-            ))}
-            </Select>
-          </FormControl>)}
-
-          <IconButton type="button" sx={{p: 1}} onClick={handleSearch}>
-            <SearchOutlinedIcon color="info"/>
-          </IconButton>
-        </Box>
-
         <Button variant="outlined"
-        sx={{width: "100%", borderRadius: "8px", minWidth: "64px", textTransform: "revert", mt: 2}}
+        sx={{width: "100%", borderRadius: "8px", minWidth: "64px", textTransform: "revert", mt: 4}}
         color="info" href='https://portal.kwestaml.com/#/register'>
             <Typography variant="h6" color="#00B8D9" sx={{fontFamily: "Open Sans", fontWeight: "700"}}>Start Screening</Typography>
         </Button>
+        <Copyright sx={{ mt: 8, mb: 1 }} />
         </Box>
 
         <Box borderLeft={1} 
@@ -186,4 +163,4 @@ const Dashboard=() =>{
     </Box>
 }
 
-export default Dashboard;
+export default Kwest;
