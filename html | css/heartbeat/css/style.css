@@ -48,10 +48,6 @@ html {
     font-weight: 600;
 }
 
-.hamburger {
-    display: none;
-}
-
 .navbar a {
     font-size: 1rem;
     color: var(--text-color);
@@ -105,11 +101,10 @@ section {
 .home-imgHover {
     position: relative;
     width: 100%; 
-    height: 300px; 
-    background: url('./img/unnamed7.jpg') no-repeat center center/cover;
+    height: 300px;
     border-radius: .5rem;
     overflow: hidden;
-    transition: background 0.3s ease-in-out;
+    transition: background 0.5s ease-in-out;
 }
 
 .home-imgHover::before {
@@ -410,6 +405,44 @@ section {
 footer {
     padding: 2rem 7%;
     text-align: center;
+}
+
+.footer-iconTop{
+    margin-top: 1.75rem;
+}
+
+.footer-iconTop a {
+    color: white;
+    font-size: 1.25rem;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    padding: 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+.footer-iconTop a:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: black;
+    border-radius: 10%;
+}
+.footer-iconTop a:hover::after {
+    content: 'Go to Top';
+    position: absolute;
+    top: -31px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    font-size: 0.75rem;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+.footer-iconTop a::after {
+    content: '';
+    opacity: 0;
 }
 
 footer span {
