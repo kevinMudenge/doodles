@@ -1,6 +1,6 @@
 {
-  "name": "ichess",
-  "version": "0.1.0",
+  "name": "random-react-components",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@emotion/styled": "^11.11.5",

@@ -49,3 +49,7 @@ Check it out, reach me at:
 [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kevinMudenge/)
 
 🫡 
+
+## Changelogs
+
+June 7: Noticed some issues with topbar will add menu-item(subject to ui/ux thoought) for mddown till then, I'll just hide that.

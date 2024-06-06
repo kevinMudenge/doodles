@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 
 import {Box, IconButton, Typography, useTheme} from "@mui/material";
 import { Tooltip, FormControlLabel, Chip} from "@mui/material";
-import {Menu, Button, MenuItem} from "@mui/material";
+import {Menu, Button, Hidden, MenuItem} from "@mui/material";
 
 
 import GridViewOutlinedIcon from '@mui/icons-material/GridViewOutlined';
@@ -93,86 +93,86 @@ const Topbar=() =>{
         backgroundColor: theme.palette.mode === 'dark' ? '#8796A5' : '#aab4be',
         borderRadius: 20 / 2,
       },
-    }));
+    }
+  ));
     
 
     return <Box display="flex" justifyContent="space-between" px={{sm:2, xs:0}} py={1}>
-    <FormControlLabel
+      <FormControlLabel
         control={<MaterialUISwitch sx={{ m: 1 }} onClick={colorMode.toggleColorMode} checked={theme.palette.mode === 'dark'}/>}
         label="IamkevinMudenge"
       />
-      <Box display="flex" alignItems="center">
-        
-        <Box display="flex" maxheight="43px" gap={1} pl={{sm:7, xs:1}}>
-          <Button
-            variant="text"
-            color={location.pathname === '/dashboard' ? 'primary' : 'info'}
-            component={RouterLink}
-            size="small"
-            to="/dashboard"
-            activeClassName="active-button"
-            sx={{ borderRadius: '7px', textTransform: 'revert' }}
-          >
-            <GridViewOutlinedIcon color="info"/>
-            <Typography ml={1} color={location.pathname === '/dashboard' ? colors.blueAccent[400] : undefined}>Dashboard</Typography>
-          </Button>
-          <Button
-            variant="text"
-            color={location.pathname === '/myoptions' ? 'info' : 'primary'}
-            component={RouterLink}
-            to="/myoptions"
-            size="small"
-            activeClassName="active-button"
-            sx={{ borderRadius: '7px', textTransform: 'revert' }}
-          >
-            <FeedOutlinedIcon />
-            <Typography ml={1} color={location.pathname === '/myoptions' ? colors.blueAccent[400] : undefined}>My Options</Typography>
-          </Button>
+        <Box display="flex" alignItems="center">
+          <Hidden mdDown>
+            <Box display="flex" maxheight="43px" gap={1} pl={{sm:7, xs:1}}>
+              <Button
+              variant="text"
+              color={location.pathname === '/dashboard' ? 'primary' : 'info'}
+              component={RouterLink}
+              size="small"
+              to="/dashboard"
+              activeClassName="active-button"
+              sx={{ borderRadius: '7px', textTransform: 'revert' }}
+              >
+                <GridViewOutlinedIcon color="info"/>
+                <Typography ml={1} color={location.pathname === '/dashboard' ? colors.blueAccent[400] : undefined}>Dashboard</Typography>
+              </Button>
+              <Button
+              variant="text"
+              color={location.pathname === '/myoptions' ? 'info' : 'primary'}
+              component={RouterLink}
+              to="/myoptions"
+              size="small"
+              activeClassName="active-button"
+              sx={{ borderRadius: '7px', textTransform: 'revert' }}
+              >
+                <FeedOutlinedIcon />
+                <Typography ml={1} color={location.pathname === '/myoptions' ? colors.blueAccent[400] : undefined}>My Options</Typography>
+              </Button>
+            </Box>
+          </Hidden>
         </Box>
-    </Box>
 
-    <Box display="flex" alignItems="center">
+        <Box display="flex" alignItems="center">
+          <Hidden xsDown>
+          <Box display="flex" gap={1} mr={1} maxHeight="2.7em">
+            <IconButton onClick={colorMode.toggleColorMode}>
+              {theme.palette.mode === 'light' ? 
+              (<DarkModeOutlinedIcon color="info"/>):(<LightModeOutlinedIcon />)}
+            </IconButton>
+          </Box>
       
-      <Box display="flex" gap={1} mr={1} maxHeight="2.7em">
-        <IconButton onClick={colorMode.toggleColorMode}>
-          {theme.palette.mode === 'light' ? 
-          (<DarkModeOutlinedIcon color="info"/>):(<LightModeOutlinedIcon />)}
-        </IconButton>
+          <Chip color="info" icon={<AccountCircleOutlinedIcon />} sx={{cursor: "default"}} label="KevinMudenge" variant="outlined" onDelete={handleClick} deleteIcon={<Tooltip title="Open settings" arrow placement="bottom-end"><ArrowDropDownIcon/></Tooltip>}/>
+          </Hidden>
+        </Box>
 
+        <Menu
+        anchorEl={anchorEl}
+        id="account-menu"
+        open={open}
+        onClose={handleClose}
+        transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+        anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+        >
+          <MenuItem onClick={handleClose}>
+            <IconButton>
+              <PersonOutlinedIcon color='primary'/>
+            </IconButton>
+            <Typography ml={1}>
+              Profile
+            </Typography>
+          </MenuItem>
+          <MenuItem onClick={handleClose}>
+            <IconButton>
+              <LogoutOutlinedIcon color='error'/>
+            </IconButton>
+            <Typography ml={1}>
+              Logout
+            </Typography>          
+          </MenuItem>
+        </Menu>
       </Box>
-      
-      <Chip color="info" icon={<AccountCircleOutlinedIcon />} sx={{cursor: "default"}} label="KevinMudenge" variant="outlined" onDelete={handleClick} deleteIcon={<Tooltip title="Open settings" arrow placement="bottom-end"><ArrowDropDownIcon/></Tooltip>}/>
-
-    </Box>
-
-    <Menu
-    anchorEl={anchorEl}
-    id="account-menu"
-    open={open}
-    onClose={handleClose}
-    transformOrigin={{ horizontal: 'right', vertical: 'top' }}
-    anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
-    >
-      <MenuItem onClick={handleClose}>
-        <IconButton>
-          <PersonOutlinedIcon color='primary'/>
-        </IconButton>
-        <Typography ml={1}>
-          Profile
-        </Typography>
-      </MenuItem>
-      <MenuItem onClick={handleClose}>
-        <IconButton>
-          <LogoutOutlinedIcon color='error'/>
-        </IconButton>
-        <Typography ml={1}>
-          Logout
-        </Typography>
-          
-      </MenuItem>
-    </Menu>
-  </Box>
     
-}
+    }
 
 export default Topbar;
