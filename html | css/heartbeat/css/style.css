@@ -104,11 +104,11 @@ section {
 
 .home-imgHover {
     position: relative;
-    width: 100%; /* Adjust width as needed */
-    height: 300px; /* Adjust height as needed */
+    width: 100%; 
+    height: 300px; 
     background: url('./img/unnamed7.jpg') no-repeat center center/cover;
-    border-radius: .5rem; /* Optional: to give the image rounded corners */
-    overflow: hidden; /* Ensure the pseudo-element stays within the boundaries */
+    border-radius: .5rem;
+    overflow: hidden;
     transition: background 0.3s ease-in-out;
 }
 
@@ -124,7 +124,7 @@ section {
 }
 
 .home-imgHover:hover::before {
-    background: rgba(0, 0, 0, 0.2); /* Darken the image slightly on hover */
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .btn-box {
