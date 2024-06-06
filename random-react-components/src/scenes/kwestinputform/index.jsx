@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-import Topbar from '../../components/global/Topbarthoughts';
+import Topbar from '../../components/global/TopBarThoughts';
 import Header from '../../components/global/Header';
 import Copyright from '../../components/global/Copyright';
 
