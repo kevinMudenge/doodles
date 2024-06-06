@@ -5,6 +5,10 @@ my very first company website
 
 I will not improve or review, It served as html/css/js training and grounds for implementation of things learnt.
 
+## languages
+
+HTML, CSS, JS
+
 ## getting started
 
 ### installation
