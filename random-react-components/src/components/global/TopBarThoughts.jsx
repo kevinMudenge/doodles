@@ -111,7 +111,7 @@ const Topbar=() =>{
               component={RouterLink}
               size="small"
               to="/dashboard"
-              activeClassName="active-button"
+              activeclassname="active-button"
               sx={{ borderRadius: '7px', textTransform: 'revert' }}
               >
                 <GridViewOutlinedIcon color="info"/>
@@ -123,7 +123,7 @@ const Topbar=() =>{
               component={RouterLink}
               to="/myoptions"
               size="small"
-              activeClassName="active-button"
+              activeclassname="active-button"
               sx={{ borderRadius: '7px', textTransform: 'revert' }}
               >
                 <FeedOutlinedIcon />
