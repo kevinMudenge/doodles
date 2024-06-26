@@ -2,9 +2,16 @@
 
 ## Introduction
 
-I built a version of my own kwest input entry form, the dashboard topbar used is a thought a process for an app I have going on
+I built a version of my own kwest input entry form, the dashboard topbar used is a thought process for an app entry point I have going on, probably the whole thing,
 
-It is not yet done, working progress, still figuring out the ins and outs and placement of future projects.
+### Possible changelog
+
+Form data(hiring services network take-over) extends -> build with material ui
+    registration form...
+    some client search, client filled entry thing
+
+The images and placing side by side in one box. and another for the copyright, one line, heart. 20...
+
 
 ## Languages
 
@@ -21,11 +28,11 @@ git clone https://github.com/kevinMudenge/doodles.git
 
 ```
 
-allow installation, I put working thoughts under doodles so if not interested in html, ignore and proceed to random-react-components and run
+allow installation, I put working thoughts under doodles so if not interested in html, ignore and proceed to react-components and run
 
 ```bash | npm
 cd doodles //parent folder
-cd random-react-components
+cd react-components
 npm i //install dependencies
 
 npm start
@@ -48,7 +55,7 @@ Check it out, reach me at:
 [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:mudengekevn254@gmail.com)
 [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kevinMudenge/)
 
-🫡 
+🫡
 
 ## Changelogs
 
