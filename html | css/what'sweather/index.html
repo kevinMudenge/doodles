@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What'sWeather</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <form action="">
+            <input type="text"  autocomplete="off" id="valueSearch">
+            <button>
+                <i></i>
+            </button>
+        </form>
+        
+        <section class="result">
+            <figure class="name" id="city">
+                <figcaption>Kenya</figcaption>
+                <img src="https://flagsapi.com/G8/shiny/32.png" alt="">
+            </figure>
+            <figure class="temperature" id="temperature">
+                <img src="https://openweathermap.org/img/wn/10d@4x.png" alt="">
+                <figcaption>
+                    <span>31</span>
+                    <sup>o</sup>
+                </figcaption>
+            </figure>
+            <p class="description">
+                Overcast clouds
+            </p>
+
+            <ul>
+                <li>
+                    <span id="clouds">Clouds</span>
+                    <span>98</span>%
+                </li>
+                <li>
+                    <span id ="humidity">Humidity</span>
+                    <span>55</span>%
+                </li>
+                <li>
+                    <span id="pressure">Pressure</span>
+                    <span>1001</span>hPa
+                </li>
+            </ul>
+        </section>
+    </main>
+
+
+    <script src="app.js"></script>
+</body>
+</html>
