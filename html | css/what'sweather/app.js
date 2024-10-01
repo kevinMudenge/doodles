@@ -22,7 +22,12 @@ let url='http://api.openweathermap.org/data/2.5/weather?units=metric&appid='+id;
 
 const searchWeather = () => {
   fetch(url + '&q=' + valueSearch.value)
-  .then(responsive => responsive.json())
+  .then(responsive => {
+    if (!responsive.ok) {
+      throw new Error('Enter a Valid location');
+    }
+    return responsive.json();
+  })
   .then(data => {
     console.log(data);
     if (data.cod == 200){
@@ -38,18 +43,18 @@ const searchWeather = () => {
       clouds.innerText = data.clouds.all;
       humidity.innerText = data.main.humidity;
       pressure.innerText = data.main.pressure;
-    } else {
-
-      //if the status code is an err code
-      main.classList.add('error');
-      setTimeout(() => {
-        main.classList.remove('error')
-      }, 2500);
-    } 
+    }
 
     valueSearch.value = '';
   })
-}
+  .catch(error => {
+    console.error('Error:', error);
+    main.classList.add('error');
+    setTimeout(() => {
+      main.classList.remove('error')
+    }, 2500);
+    });
+  };
 
 const initApp = () => {
   valueSearch.value = 'Kenya';
