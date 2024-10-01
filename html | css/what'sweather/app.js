@@ -30,7 +30,8 @@ const searchWeather = () => {
       city.querySelector('img').src='https://flagsapi.com/'+data.sys.country+'/shiny/32.png';
       
       temperature.querySelector('img').src='https://openweathermap.org/img/wn/'+data.weather[0].icon+'@4x.png';
-      temperature.queryselector('figcaption span').innerText = data.main.temp;
+
+      temperature.querySelector('figcaption span').innerText = data.main.temp;
 
       description.innerText=data.weather[0].description;
 

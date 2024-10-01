@@ -70,7 +70,7 @@ main .temperature figcaption{
 }
 
 main .description{
-    padding: 0px 0px 7px;
+    padding: 0px 0px 12px;
     color: #331892;
 }
 
@@ -102,6 +102,17 @@ main li :nth-child(2){
 
 main .error{
     animation: errorEffect 0.3s linear 2;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    font-size: small;
+    font-weight: lighter;
 }
 
 @keyframes errorEffect {
