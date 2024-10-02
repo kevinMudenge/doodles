@@ -20,7 +20,7 @@ git clone https://github.com/kevinMudenge/doodles.git
 
 ```
 
-allow installation, navigate into the HTML | CSS/heartbeat folder, voila! Heart. 😁
+allow installation, navigate into the heartbeat folder, voila! Heart. 😁
 
 ### run
 
@@ -28,7 +28,7 @@ to run, I run with Live Server, an extension in vlc code(I like it for a lot of 
 
 click on Go Live
 
-alternatively you can just click on the indx.html file, it will open in your browser.
+alternatively you can just click on the index.html file, it will open in your browser.
 
 ## features
 

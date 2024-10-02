@@ -4,6 +4,8 @@
 
 I built a version of my own kwest input entry form, the dashboard topbar used is a thought process for an app entry point I have going on, probably the whole thing,
 
+The button drops you to a kwest registration thing, I have no affiliates just promoting, just is.
+
 ### Possible changelog
 
 Form data(hiring services network take-over) extends -> build with material ui
