@@ -14,6 +14,7 @@ Current projects:
 
     they are organized as a working site but each component is just a separate entity and thought process, currently this folder contains:
         - TopBarThoughts.jsx(in global)
+
         - kwestinputform(in scenes)
             - index.jsx
 
