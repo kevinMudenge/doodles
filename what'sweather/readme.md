@@ -5,7 +5,7 @@ This is a simple implementation in html | css | js of a weather display single p
 
 credits :salute
 ### changelog
-pending restyling, 😶‍🌫️
+pending restyling, error effect review, 😶‍🌫️
 
 ## getting started
 
