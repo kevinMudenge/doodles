@@ -1,9 +1,6 @@
 # what's weather
 A simple weather app with real time data retrieval courtesy of openweather.org api and flagsapi.
 
-## introduction
-
-I will not improve or review, It served as html/css/js training and grounds for implementation of things learnt specifically in js.
 
 ## languages
 
