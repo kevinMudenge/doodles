@@ -1,23 +1,28 @@
-# what's weather
-A simple weather app with real time data retrieval courtesy of openweather.org api and flagsapi.
+# What'sWeather
 
+## introduction
+This is a simple implementation in html | css | js of a weather display single page app with api intergration from openweather.org for real time weather data.
 
-## languages
-
-HTML, CSS, JS
+credits :salute
+### changelog
+pending restyling, 😶‍🌫️
 
 ## getting started
+
+### languages
+
+HTML, CSS, JS
 
 ### installation
 
 perform a
 
 ```git
-git clone https://github.com/kevinMudenge/doodles.git
+git clone https://github.com/kevinMudenge/what'sweather.git
 
 ```
 
-allow installation, navigate into the what'sweather folder, voila! Weather for any city and country in te world. 😁
+allow installation, navigate into and voila! Weather! 😁
 
 ### run
 
@@ -29,7 +34,5 @@ alternatively you can just click on the index.html file, it will open in your br
 
 ## features
 
-apis, actions, etcetera.
+Real-time weather data, error-handling, api consumption, basic app implementation.
 
-
-Lovely Day.
