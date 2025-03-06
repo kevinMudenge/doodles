@@ -3,7 +3,7 @@ my very first company website
 
 ## introduction
 
-I will not improve or review, It served as html/css/js training and grounds for implementation of things learnt.
+Some dump thing I did, the vision has always been the vision. Alhamdulillah
 
 ## languages
 
@@ -20,7 +20,7 @@ git clone https://github.com/kevinMudenge/doodles.git
 
 ```
 
-allow installation, navigate into the heartbeat folder, voila! Heart. 😁
+allow installation, navigate into the heartbeat folder,
 
 ### run
 

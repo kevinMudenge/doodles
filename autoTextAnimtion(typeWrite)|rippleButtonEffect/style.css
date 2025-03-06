@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+body{
+    margin: 0;
+    height: 100vh;
+    background-color: salmon;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.btn{
+    font-family: sans-serif;
+    background-color:pink;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 8px rgba(255,255,255, 0.4);
+}
+
+h6{
+    margin: 12px 24px;
+    position: relative;
+    z-index: 2;
+}
+
+.btn::before{
+    content: "";
+    background-color: salmon;
+    height: 8px;
+    width: 8px;
+    position: absolute;
+    top: var(--y);
+    left: var(--x);
+    /*since js can't access this pseudo-element/ all psseudo-elements (they aren't registered as part of the dom, we use var() (sets the property to listen for a variable) to reach and target these css properties*/
+
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    transition: all .5s;
+    /*This is how you write transitions :attr. timer(must have s for seconds, etcetera), ..*/
+}
+
+.btn:hover::before{
+    height: 300px;
+    width: 300px;
+}
