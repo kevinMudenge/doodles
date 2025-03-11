@@ -1,0 +1,39 @@
+body{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: cursive;
+}
+
+.container{
+    width: 800px;
+    height: 200px;
+    position: relative;
+    background-color: slateblue;
+    padding: 20px 10px;
+    margin: 10px;
+}
+
+img{
+    position: absolute;
+    top: -50px;
+    left: 400px;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.testimonial{
+    color: white;
+    font-weight: 500;
+    font-size: 24px;
+    padding: 50px 10px 0 10px;
+}
+
+h4{
+    color: white;
+    padding: 15px 0;
+    font-weight: 400;
+}
